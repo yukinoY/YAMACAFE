@@ -1,0 +1,165 @@
+html {
+  font-size: 100px;
+  height: 100%;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 0.16rem;
+  color: #222;
+  line-height: 1.8;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+/* reset */
+body, h1, h2, h3, h4, h5, h6, p, ul, figure {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+.l-hero {
+  background: url(../img/cafe.jpg) center/cover #222;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .l-hero {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+}
+
+.c-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.p-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-left: 6vw;
+  padding-right: 6vw;
+}
+
+.p-header__site-img {
+  width: 1.25rem;
+}
+
+@media screen and (min-width: 768px) {
+  .p-header__site-img {
+    width: 2.26rem;
+  }
+}
+
+.p-header__nav-btn {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  padding: 0;
+  outline: none;
+  border: none;
+  background: none;
+  width: 29px;
+  height: 20px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.p-header__nav-btn::before, .p-header__nav-btn::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background-color: currentColor;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.p-header__nav-btn::before {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  -webkit-box-shadow: 0 10px currentColor;
+          box-shadow: 0 10px currentColor;
+}
+
+.p-hero {
+  position: relative;
+}
+
+.p-hero::after {
+  content: url(../img/arrow.svg);
+  display: block;
+  width: 0.16rem;
+  padding: 0.18rem 0.15rem 0.1rem;
+  border-radius: 50% 50% 0 0;
+  background-color: #fff;
+  line-height: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .p-hero::after {
+    width: 0.31rem;
+    padding: 0.35rem 0.31rem 0.16rem;
+  }
+}
+
+.p-hero__title {
+  width: 50%;
+  text-align: center;
+}
+
+.u-sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+/*# sourceMappingURL=style.css.map */

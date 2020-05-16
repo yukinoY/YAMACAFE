@@ -1,0 +1,49 @@
+html {
+  font-size: 100px;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 0.16rem;
+  color: #222;
+  line-height: 1.8;
+}
+
+/* reset */
+body, h1, h2, h3, h4, h5, h6, p, ul, figure {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+.l-hero {
+  background: url(../img/cafe.jpg) center/cover #222;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+.c-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+/*# sourceMappingURL=styel.css.map */

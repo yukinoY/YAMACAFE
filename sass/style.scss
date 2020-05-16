@@ -1,0 +1,153 @@
+@charset 'utf-8';
+
+$breakpoints: (
+  "sm": "screen and (max-width: 374px)",
+  "md": "screen and (min-width: 768px)",
+  "lg": "screen and (min-width: 900px)",
+  "xl": "screen and (min-width: 1200px)",
+) !default;
+
+$primary: #ff953a;
+$darkgray: #222;
+$midgray: #414141;
+$gray: #888;
+$white: #fff;
+$side-margin: 6vw;
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints,$breakpoint)} {
+    @content;
+  }
+}
+
+html {
+  font-size: 100px;
+  height: 100%;
+}
+body {
+  font-family: sans-serif;
+  font-size: 0.16rem;
+  color: $darkgray;
+  line-height: 1.8;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+/* reset */
+body, h1, h2, h3, h4, h5, h6, p, ul, figure {
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.l-hero {
+  background: url(../img/cafe.jpg) center / cover $darkgray;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  @include mq() {
+    justify-content: flex-end;
+  }
+}
+
+.c-flex {
+display: flex;
+}
+
+.p-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  box-sizing: border-box;
+  padding-left: $side-margin;
+  padding-right: $side-margin;
+  &__site {
+    &-img {
+      width: 1.25rem;
+      @include mq() {
+        width: 2.26rem;
+      }
+    }
+  }
+  &__nav {
+    &-btn {
+      box-sizing: content-box;
+      padding: 0;
+      outline: none;
+      border: none;
+      background: none;
+      width: 29px;
+      height: 20px;
+      cursor: pointer;
+      color: $white;
+      &::before,
+      &::after {
+        content: '';
+        display: block;
+        height: 1px;
+        background-color: currentColor;
+        transform: translateY(10px);
+        transition: 0.3s ease-in-out;
+      }
+      &::before {
+        transform: translateY(-10px);
+        box-shadow: 0 10px currentColor;
+      }
+    }
+  }
+}
+
+
+.p-hero {
+  position: relative;
+  &::after {
+    content: url(../img/arrow.svg);
+    display: block;
+    width: 0.16rem;
+    padding: 0.18rem 0.15rem 0.1rem;
+    border-radius: 50% 50% 0 0;
+    background-color: $white;
+    line-height: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    @include mq() {
+      width: 0.31rem;
+      padding: 0.35rem 0.31rem 0.16rem;
+    }
+  }
+  &__title {
+    width: 50%;
+    text-align: center;
+  }
+}
+
+.u-sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
