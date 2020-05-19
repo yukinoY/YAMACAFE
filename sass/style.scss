@@ -12,7 +12,7 @@ $darkgray: #222;
 $midgray: #414141;
 $gray: #888;
 $white: #fff;
-$side-margin: 6vw;
+$side: 6vw;
 
 @mixin mq($breakpoint: md) {
   @media #{map-get($breakpoints,$breakpoint)} {
@@ -23,6 +23,9 @@ $side-margin: 6vw;
 html {
   font-size: 100px;
   height: 100%;
+  @include mq() {
+    font-size: 7.32vw;
+  }
 }
 body {
   font-family: sans-serif;
@@ -34,7 +37,16 @@ body {
 }
 
 /* reset */
-body, h1, h2, h3, h4, h5, h6, p, ul, figure {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+figure {
   margin: 0;
   padding: 0;
 }
@@ -51,6 +63,10 @@ a {
   }
 }
 
+.l-container {
+  padding: 0.68rem $side;
+}
+
 .l-hero {
   background: url(../img/cafe.jpg) center / cover $darkgray;
   justify-content: center;
@@ -61,12 +77,73 @@ a {
   }
 }
 
+.l-menu {
+  background: url(../img/texture.jpg) repeat;
+  @include mq() {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+.l-news {
+  @include mq() {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+.l-hours {
+  background: url(../img/shop.jpg) center / cover;
+  color: $white;
+  text-align: center;
+}
+
+.l-info {
+  background: $primary;
+  text-align: center;
+}
+
+.l-footer {
+  background: $darkgray;
+  height: 89px;
+  color: $white;
+  justify-content: center;
+  align-items: center;
+}
+
 .c-flex {
-display: flex;
+  display: flex;
+}
+
+.c-section {
+  &__title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.26rem;
+    letter-spacing: 0.179em;
+    line-height: 1;
+    @include mq() {
+      font-size: 0.42rem;
+    }
+    &::after {
+      content: "";
+      display: block;
+      width: 0.56rem;
+      height: 4px;
+      margin-top: 0.17rem;
+      margin-bottom: 0.1rem;
+      background-color: $primary;
+    }
+  }
+  &__lead {
+    font-size: 0.13rem;
+    @include mq() {
+      font-size: 0.2rem;
+    }
+  }
 }
 
 .p-header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
@@ -76,8 +153,8 @@ display: flex;
   width: 100%;
   height: 100px;
   box-sizing: border-box;
-  padding-left: $side-margin;
-  padding-right: $side-margin;
+  padding-left: $side;
+  padding-right: $side;
   &__site {
     &-img {
       width: 1.25rem;
@@ -87,6 +164,25 @@ display: flex;
     }
   }
   &__nav {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: $white;
+    transition: left 0.5s ease-in-out;
+    @include mq() {
+      position: relative;
+      left: auto;
+      width: auto;
+      height: auto;
+      background-color: transparent;
+    }
     &-btn {
       box-sizing: content-box;
       padding: 0;
@@ -99,7 +195,7 @@ display: flex;
       color: $white;
       &::before,
       &::after {
-        content: '';
+        content: "";
         display: block;
         height: 1px;
         background-color: currentColor;
@@ -110,10 +206,51 @@ display: flex;
         transform: translateY(-10px);
         box-shadow: 0 10px currentColor;
       }
+      @include mq() {
+        display: none;
+      }
+    }
+    &-list {
+      margin-bottom: 10vh;
+      list-style: none;
+      @include mq() {
+        display: flex;
+        margin-bottom: 0;
+      }
+    }
+    &-item {
+      &:not(:first-of-type) {
+        margin-top: 20px;
+        @include mq() {
+          margin-top: 0;
+          margin-left: 0.55rem;
+        }
+      }
     }
   }
 }
 
+.open {
+  height: 100%;
+  overflow: hidden;
+  .p-header {
+    margin-bottom: -100px;
+    &__nav {
+      left: 0;
+      &-btn {
+        z-index: 1000;
+        &::before {
+          transform: rotate(-45deg);
+          box-shadow: none;
+        }
+        &::after {
+          transform: rotate(45deg);
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}
 
 .p-hero {
   position: relative;
@@ -138,6 +275,172 @@ display: flex;
   &__title {
     width: 50%;
     text-align: center;
+  }
+}
+
+.p-menu {
+  &__title {
+    &::after {
+      @include mq() {
+        width: 0.85rem;
+        margin-top: 0.23rem;
+        margin-bottom: 0.14rem;
+      }
+    }
+  }
+  &__item {
+    margin-top: 0.64rem;
+    flex-direction: column;
+    @include mq() {
+      margin-top: 1rem;
+      flex-direction: row;
+    }
+  }
+  &__text {
+    width: 76vw;
+    @include mq() {
+      flex: 0 0 3.12rem;
+    }
+    &-title {
+      font-size: 0.16rem;
+      color: $midgray;
+      line-height: 1;
+      justify-content: flex-start;
+      align-items: center;
+      @include mq() {
+        font-size: 0.25rem;
+      }
+      &::before {
+        content: url(../img/mark.svg);
+        display: block;
+        width: 0.4rem;
+        margin-right: 0.1rem;
+        @include mq() {
+          width: 0.48rem;
+        }
+      }
+    }
+    &-lead {
+      font-size: 0.14rem;
+      margin-top: 0.19rem;
+      @include mq() {
+        font-size: 0.16rem;
+        margin-top: 0.22rem;
+      }
+    }
+  }
+  &__photo {
+    margin: 0.16rem calc(#{$side} * -1) 0;
+    align-items: flex-end;
+    @include mq() {
+      margin: 0 0 0 0.49rem;
+      flex: 1 1 auto;
+    }
+    img {
+      width: 100%;
+      max-height: 2rem;
+      object-fit: cover;
+      @include mq() {
+        max-height: none;
+      }
+    }
+  }
+}
+.p-menu__item {
+  &.-cafe {
+    @include mq() {
+      margin-left: calc(#{$side} * 2);
+      margin-right: calc(#{side} * -1);
+    }
+    .p-menu {
+      &__photo-fig {
+        &-1 {
+          flex: 1 1 auto;
+          margin-right: -0.47rem;
+          margin-bottom: 0.38rem;
+        }
+        &-2 {
+          flex: 0 0 43vw;
+          img {
+            height: 1.56rem;
+          }
+        }
+      }
+    }
+  }
+  &.-plate {
+    .p-menu {
+      &__text {
+        margin-left: auto;
+        &-title {
+          flex-direction: row-reverse;
+          &::before {
+            margin-left: 0.17rem;
+            margin-right: 0;
+          }
+        }
+      }
+      &__photo-fig {
+        &-1 {
+          flex: 0 0 85.6vw;
+        }
+      }
+    }
+  }
+  &.-sweet {
+    .p-menu {
+      &__photo-fig {
+        &-1 {
+          flex: 1 1 auto;
+          margin-right: -0.26rem;
+          margin-bottom: 0.38rem;
+        }
+        &-2 {
+          flex: 0 0 56.2vw;
+        }
+        img {
+          height: 2rem;
+        }
+      }
+    }
+  }
+}
+
+.p-news {
+  &__title {
+    &::after {
+      @include mq() {
+        width: 0.85rem;
+        margin-top: 0.23rem;
+        margin-bottom: 0.14rem;
+      }
+    }
+  }
+}
+
+.p-hours {
+  &__title {
+    letter-spacing: 0;
+    @include mq() {
+      font-size: 0.32rem;
+    }
+    &::after {
+      width: 0.28rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.p-info {
+  &__title {
+    width: 2.44rem;
+    margin: auto;
+  }
+  &__sub-title {
+    color: $midgray;
+    font-weight: bold;
+    letter-spacing: 0.516em;
   }
 }
 
