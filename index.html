@@ -16,14 +16,14 @@
     <div class="p-sheader__site">
       <img class="p-header__site-img" src="img/yamacafe-w.svg" alt="YAMACAFE ヤマカフェ">
     </div>
-      <nav class="p-header__nav">
-        <ul class="p-header__nav-list">
-          <li class="p-header__nav-item"><a href="#">ホーム</a></li>
-          <li class="p-header__nav-item"><a href="#">こだわりメニュー</a></li>
-          <li class="p-header__nav-item"><a href="#">お知らせ</a></li>
-          <li class="p-header__nav-item"><a href="#">営業時間</a></li>
-        </ul>
-      </nav>
+    <nav class="p-header__nav">
+      <ul class="p-header__nav-list">
+        <li class="p-header__nav-item"><a href="#">ホーム</a></li>
+        <li class="p-header__nav-item"><a href="#">こだわりメニュー</a></li>
+        <li class="p-header__nav-item"><a href="#">お知らせ</a></li>
+        <li class="p-header__nav-item"><a href="#">営業時間</a></li>
+      </ul>
+    </nav>
     <button id="nav-btn" type="button" class="p-header__nav-btn"><span class="u-sr-only">MENU</span></button>
   </header>
   <div class="p-hero l-hero c-flex">
@@ -31,45 +31,60 @@
   </div>
 
   <article class="l-menu l-container">
-    <h2 class="c-section__title p-menu__title">Food & Drink</h2>
-    <p class="p-menu__lead c-section__lead">こだわり素材のメニューをご紹介します</p>
+    <div class="p-menu__inner">
+      <div class="p-menu__heading">
+        <h2 class="c-section__title p-menu__title">Food & Drink</h2>
+        <p class="p-menu__lead c-section__lead">こだわり素材のメニューをご紹介します</p>
+      </div>
 
-    <section class="p-menu__item -cafe c-flex">
-      <div class="p-menu__text">
-        <h3 class="p-menu__text-title c-flex">定番カフェ</h3>
-        <p class="p-menu__text-lead">定番だからこそ、豆や茶葉、ミルク、キャラメルなどの素材に拘った一杯を提供しています。</p>
-      </div>
-      <div class="p-menu__photo c-flex">
-        <figure class="p-menu__photo-fig-1"><img src="img/beans.jpg" alt="豆"></figure>
-        <figure class="p-menu__photo-fig-2"><img src="img/espresso.jpg" alt="エスプレッソ"></figure>
-      </div>
-    </section>
+      <section class="p-menu__item -cafe c-flex">
+        <div class="p-menu__text">
+          <h3 class="p-menu__text-title c-flex">定番カフェ</h3>
+          <p class="p-menu__text-lead">定番だからこそ、豆や茶葉、ミルク、キャラメルなどの素材に拘った一杯を提供しています。</p>
+        </div>
+        <div class="p-menu__photo c-flex">
+          <figure class="p-menu__photo-fig-1"><img src="img/beans.jpg" alt="豆"></figure>
+          <figure class="p-menu__photo-fig-2"><img src="img/espresso.jpg" alt="エスプレッソ"></figure>
+        </div>
+      </section>
 
-    <section class="p-menu__item -plate c-flex">
-      <div class="p-menu__text">
-        <h3 class="p-menu__text-title c-flex">季節のスペシャルプレート</h3>
-        <p class="p-menu__text-lead">季節のフルーツを組み合わせたスペシャルプレートはカフェ専属シェフのおすすめメニューです。</p>
-      </div>
-      <div class="p-menu__photo c-flex">
-        <figure class="p-menu__photo-fig-1"><img src="img/plate.jpg" alt="プレート"></figure>
-      </div>
-    </section>
+      <section class="p-menu__item -plate c-flex">
+        <div class="p-menu__text">
+          <h3 class="p-menu__text-title c-flex">季節のスペシャルプレート</h3>
+          <p class="p-menu__text-lead">季節のフルーツを組み合わせたスペシャルプレートはカフェ専属シェフのおすすめメニューです。</p>
+        </div>
+        <div class="p-menu__photo c-flex">
+          <figure class="p-menu__photo-fig-1"><img src="img/plate.jpg" alt="プレート"></figure>
+        </div>
+      </section>
 
-    <section class="p-menu__item -sweet c-flex">
-      <div class="p-menu__text">
-        <h3 class="p-menu__text-title c-flex">お持ち帰りスイーツ</h3>
-        <p class="p-menu__text-lead">自宅でのんびりしながら楽しめるスイーツです。ケーキ、クリームサンド、クッキーなどをご用意しています。</p>
-      </div>
-      <div class="p-menu__photo c-flex">
-        <figure class="p-menu__photo-fig-1"><img src="img/cake.jpg" alt="ケーキ"></figure>
-        <figure class="p-menu__photo-fig-2"><img src="img/sandwich.jpg" alt="サンド"></figure>
-      </div>
-    </section>
+      <section class="p-menu__item -sweet c-flex">
+        <div class="p-menu__text">
+          <h3 class="p-menu__text-title c-flex">お持ち帰りスイーツ</h3>
+          <p class="p-menu__text-lead">自宅でのんびりしながら楽しめるスイーツです。ケーキ、クリームサンド、クッキーなどをご用意しています。</p>
+        </div>
+        <div class="p-menu__photo c-flex">
+          <figure class="p-menu__photo-fig-1"><img src="img/cake.jpg" alt="ケーキ"></figure>
+          <figure class="p-menu__photo-fig-2"><img src="img/sandwich.jpg" alt="サンド"></figure>
+        </div>
+      </section>
+    </div>
   </article>
 
   <aside class="l-news l-container">
     <h2 class="c-section__title p-news__title">What's New</h2>
     <p class="p-news__lead c-section__lead">カフェからのお知らせ＆新着情報です</p>
+    <dl class="p-news__list c-flex">
+      <dt class="p-news__date">2020年2月1日</dt>
+      <dd class="p-news__desc">お持ち帰りスイーツにバレンタインパックが仲間入りしました。</dd>
+      <dt class="p-news__date">2020年1月1日</dt>
+      <dd class="p-news__desc">恒例の「旧正月ご来光カフェ」を１月25日午前6時より前岳山頂で開催します。</dd>
+      <dt class="p-news__date">2019年12月26日</dt>
+      <dd class="p-news__desc">年末の営業は30日の午後８時まで、年始の営業は３日の午前11時からとさせていただきます。４日からは通常営業の予定です。</dd>
+      <dt class="p-news__date">2019年12月20日</dt>
+      <dd class="p-news__desc">クリスマスプレートのご予約は23日までとなっております。</dd>
+    </dl>
+    <a href="#" class="p-news__more c-flex">お知らせ一覧</a>
   </aside>
 
   <aside class="l-hours l-container">

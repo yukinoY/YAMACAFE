@@ -78,7 +78,6 @@ a {
 }
 
 .l-menu {
-  background: url(../img/texture.jpg) repeat;
   @include mq() {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -86,6 +85,7 @@ a {
 }
 
 .l-news {
+  background: url(../img/edge.png) repeat-x, url(../img/texture.jpg) repeat;
   @include mq() {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -279,6 +279,18 @@ a {
 }
 
 .p-menu {
+  &__inner {
+    @include mq() {
+      position: relative;
+    }
+  }
+  &__heading {
+    @include mq() {
+      position: absolute;
+      top: 0.13rem;
+      left: 0;
+    }
+  }
   &__title {
     &::after {
       @include mq() {
@@ -297,6 +309,8 @@ a {
     }
   }
   &__text {
+    position: relative;
+    z-index: 2;
     width: 76vw;
     @include mq() {
       flex: 0 0 3.12rem;
@@ -330,6 +344,7 @@ a {
     }
   }
   &__photo {
+    position: relative;
     margin: 0.16rem calc(#{$side} * -1) 0;
     align-items: flex-end;
     @include mq() {
@@ -349,57 +364,185 @@ a {
 .p-menu__item {
   &.-cafe {
     @include mq() {
+      margin-top: 0;
       margin-left: calc(#{$side} * 2);
-      margin-right: calc(#{side} * -1);
+      margin-right: calc(#{$side} * -1);
     }
     .p-menu {
+      &__photo {
+        &::after {
+          content: url(../img/cafe.svg);
+          display: block;
+          width: 28vw;
+          position: absolute;
+          top: -12vw;
+          right: 12vw;
+          opacity: 0.8;
+          @include mq() {
+            width: 2rem;
+            top: auto;
+            right: auto;
+            bottom: 0.12rem;
+            left: -0.85rem;
+          }
+        }
+      }
       &__photo-fig {
         &-1 {
           flex: 1 1 auto;
           margin-right: -0.47rem;
           margin-bottom: 0.38rem;
+          @include mq() {
+            margin-right: -0.88rem;
+            margin-bottom: 1.11rem;
+          }
+          img {
+            @include mq() {
+              height: 3.3rem;
+            }
+          }
         }
         &-2 {
           flex: 0 0 43vw;
+          @include mq() {
+            flex: 0 0 auto;
+            width: calc(#{$side} * 3 + 0.88rem);
+          }
           img {
             height: 1.56rem;
+            @include mq() {
+              height: 3rem;
+            }
+          }
+        }
+      }
+      &__text {
+        @include mq() {
+          align-self: flex-end;
+        }
+        &-title {
+          @include mq() {
+            margin-left: -0.58rem;
+          }
+        }
+        &-lead {
+          @include mq() {
+            margin-bottom: 0.73rem;
           }
         }
       }
     }
   }
   &.-plate {
+    @include mq() {
+      flex-direction: row-reverse;
+      margin-left: calc(#{$side} * -2);
+      margin-right: calc(#{$side} * 1);
+    }
     .p-menu {
       &__text {
         margin-left: auto;
+        @include mq() {
+          margin-right: 0;
+          margin-left: 0.49rem;
+        }
         &-title {
           flex-direction: row-reverse;
+          @include mq() {
+            margin-right: -0.58rem;
+          }
           &::before {
             margin-left: 0.17rem;
             margin-right: 0;
           }
         }
       }
+      &__photo {
+        @include mq() {
+          display: block;
+        }
+        &::after {
+          content: url(../img/plate.svg);
+          display: block;
+          width: 30vw;
+          position: absolute;
+          top: -14vw;
+          left: 1.3vw;
+          opacity: 0.8;
+          @include mq() {
+            width: 2rem;
+            top: 1.21rem;
+            right: -1.48rem;
+            left: auto;
+          }
+        }
+      }
       &__photo-fig {
         &-1 {
           flex: 0 0 85.6vw;
+          img {
+            @include mq() {
+              height: 3.95rem;
+            }
+          }
         }
       }
     }
   }
   &.-sweet {
+    @include mq() {
+      margin-left: calc(#{$side} * 2);
+      margin-right: calc(#{$side} * -1);
+    }
     .p-menu {
+      &__photo {
+        &::after {
+          content: url(../img/sweet.svg);
+          display: block;
+          width: 32vw;
+          position: absolute;
+          top: -12vw;
+          right: 9vw;
+          opacity: 0.8;
+          @include mq() {
+            width: 2.27rem;
+            top: 1.11rem;
+            left: -1.68rem;
+            right: auto;
+          }
+        }
+      }
       &__photo-fig {
         &-1 {
           flex: 1 1 auto;
           margin-right: -0.26rem;
           margin-bottom: 0.38rem;
+          @include mq() {
+            margin: 0;
+          }
+          img {
+            height: 2rem;
+            @include mq() {
+              height: 3.04rem;
+            }
+          }
         }
         &-2 {
           flex: 0 0 56.2vw;
+          @include mq() {
+            flex: 0 0 4.69rem;
+          }
+          img {
+            height: 2rem;
+            @include mq() {
+              height: 3.04rem;
+            }
+          }
         }
-        img {
-          height: 2rem;
+      }
+      &__text-title {
+        @include mq() {
+          margin-left: -0.58rem;
         }
       }
     }
@@ -414,6 +557,61 @@ a {
         margin-top: 0.23rem;
         margin-bottom: 0.14rem;
       }
+    }
+  }
+  &__list {
+    margin-top: 0.35rem;
+    margin-bottom: 0.35rem;
+    font-size: 0.14rem;
+    flex-direction: column;
+    @include mq() {
+      margin-left: calc(#{$side} * 2);
+      margin-right: calc(#{$side} * 2);
+      font-size: 0.16rem;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+    }
+  }
+  &__date {
+    font-weight: bold;
+    color: $gray;
+    margin-bottom: 0.03rem;
+    @include mq() {
+      flex: 0 0 1.57rem;
+    }
+  }
+  &__desc {
+    margin-left: 0;
+    &:not(:last-of-type) {
+      margin-bottom: 0.35rem;
+      @include mq() {
+        margin-bottom: 0.08rem;
+      }
+    }
+    @include mq() {
+      flex: 0 0 auto;
+      width: calc(100% - 1.57rem);
+    }
+  }
+  &__more {
+    font-weight: bold;
+    color: $primary;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 0.16rem;
+    border-top: 0.12rem solid currentColor;
+    text-align: right;
+    &::after {
+      content: url(../img/arrow.svg);
+      display: block;
+      margin-left: 0.11rem;
+      width: 0.18rem;
+      transform: rotate(-90deg);
+    }
+    @include mq() {
+      margin-left: calc(#{$side} * 2);
+      margin-right: calc(#{$side} * 2);
     }
   }
 }
