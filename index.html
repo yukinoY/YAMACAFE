@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YAMACAFE ヤマカフェ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="sass/style.css">
+  <link rel="icon" href="img/favicon.png" type="img/png">
+  <link rel="icon" href="img/favicon.svg" type="img/svg+xml">
+</head>
+
+<body>
+  <header class="p-header l-header">
+    <div class="p-sheader__site">
+      <img class="p-header__site-img" src="img/yamacafe-w.svg" alt="YAMACAFE ヤマカフェ">
+    </div>
+    <nav class="p-header__nav">
+      <ul class="p-header__nav-list">
+        <li class="p-header__nav-item"><a href="#">ホーム</a></li>
+        <li class="p-header__nav-item"><a href="#">こだわりメニュー</a></li>
+        <li class="p-header__nav-item"><a href="#">お知らせ</a></li>
+        <li class="p-header__nav-item"><a href="#">営業時間</a></li>
+      </ul>
+    </nav>
+    <button id="nav-btn" type="button" class="p-header__nav-btn"><span class="u-sr-only">MENU</span></button>
+  </header>
+  <div class="p-hero l-hero c-flex">
+    <h1 class="p-hero__title"><img src="img/catch.svg" alt="Take A Break"></h1>
+  </div>
+
+  <article class="l-menu l-container">
+    <div class="p-menu__inner">
+      <div class="p-menu__heading">
+        <h2 class="c-section__title p-menu__title">Food & Drink</h2>
+        <p class="p-menu__lead c-section__lead">こだわり素材のメニューをご紹介します</p>
+      </div>
+
+      <section class="p-menu__item -cafe c-flex">
+        <div class="p-menu__text">
+          <h3 class="p-menu__text-title c-flex">定番カフェ</h3>
+          <p class="p-menu__text-lead">定番だからこそ、豆や茶葉、ミルク、キャラメルなどの素材に拘った一杯を提供しています。</p>
+        </div>
+        <div class="p-menu__photo c-flex">
+          <figure class="p-menu__photo-fig-1"><img src="img/beans.jpg" alt="豆"></figure>
+          <figure class="p-menu__photo-fig-2"><img src="img/espresso.jpg" alt="エスプレッソ"></figure>
+        </div>
+      </section>
+
+      <section class="p-menu__item -plate c-flex">
+        <div class="p-menu__text">
+          <h3 class="p-menu__text-title c-flex">季節のスペシャルプレート</h3>
+          <p class="p-menu__text-lead">季節のフルーツを組み合わせたスペシャルプレートはカフェ専属シェフのおすすめメニューです。</p>
+        </div>
+        <div class="p-menu__photo c-flex">
+          <figure class="p-menu__photo-fig-1"><img src="img/plate.jpg" alt="プレート"></figure>
+        </div>
+      </section>
+
+      <section class="p-menu__item -sweet c-flex">
+        <div class="p-menu__text">
+          <h3 class="p-menu__text-title c-flex">お持ち帰りスイーツ</h3>
+          <p class="p-menu__text-lead">自宅でのんびりしながら楽しめるスイーツです。ケーキ、クリームサンド、クッキーなどをご用意しています。</p>
+        </div>
+        <div class="p-menu__photo c-flex">
+          <figure class="p-menu__photo-fig-1"><img src="img/cake.jpg" alt="ケーキ"></figure>
+          <figure class="p-menu__photo-fig-2"><img src="img/sandwich.jpg" alt="サンド"></figure>
+        </div>
+      </section>
+    </div>
+  </article>
+
+  <aside class="l-news l-container">
+    <h2 class="c-section__title p-news__title">What's New</h2>
+    <p class="p-news__lead c-section__lead">カフェからのお知らせ＆新着情報です</p>
+    <dl class="p-news__list c-flex">
+      <dt class="p-news__date">2020年2月1日</dt>
+      <dd class="p-news__desc">お持ち帰りスイーツにバレンタインパックが仲間入りしました。</dd>
+      <dt class="p-news__date">2020年1月1日</dt>
+      <dd class="p-news__desc">恒例の「旧正月ご来光カフェ」を１月25日午前6時より前岳山頂で開催します。</dd>
+      <dt class="p-news__date">2019年12月26日</dt>
+      <dd class="p-news__desc">年末の営業は30日の午後８時まで、年始の営業は３日の午前11時からとさせていただきます。<br>４日からは通常営業の予定です。</dd>
+      <dt class="p-news__date">2019年12月20日</dt>
+      <dd class="p-news__desc">クリスマスプレートのご予約は23日までとなっております。</dd>
+    </dl>
+    <a href="#" class="p-news__more c-flex">お知らせ一覧</a>
+  </aside>
+
+  <aside class="l-hours l-container">
+    <h2 class="c-section__title p-hours__title">HOURS</h2>
+    <p class="p-hours__lead c-section__lead">営業時間</p>
+    <dl class="p-hours__list c-flex">
+      <dt class="p-hours__date">月〜金</dt>
+      <dd class="p-hours__time">7:00 am - 9:00 pm</dd>
+      <dt class="p-hours__date">土～日</dt>
+      <dd class="p-hours__time">9:00 am - 8:00 pm</dd>
+    </dl>
+  </aside>
+
+  <aside class="p-info l-info l-container">
+    <div class="p-info__text c-flex">
+      <h2 class="p-info__title"><img src="img/yamacafe.svg" alt="YAMACAFE"></h2>
+      <p class="p-info__sub-title">ヤマカフェ</p>
+
+      <p class="p-info__address">
+        〒901-3125<br>
+        沖縄県島尻郡久米島町字鳥島グスク<br>
+        0997-1234-5678
+      </p>
+      <ul class="p-info__sns c-flex">
+        <li class="p-info__sns-item">
+          <a href="#"><img src="img/logo-twitter.svg" alt="Twitter" class="p-info__sns-img"></a>
+        </li>
+        <li class="p-info__sns-item">
+          <a href="#"><img src="img/logo-facebook.svg" alt="Facebook" class="p-info__sns-img"></a>
+        </li>
+        <li class="p-info__sns-item">
+          <a href="#"><img src="img/logo-instagram.svg" alt="Instagram" class="p-info__sns-img"></a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="p-info__map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7135.877765467647!2d127.9775245752635!3d26.586336433076614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e45588ebc239fb%3A0xadeb6fd9cc254e5!2z44CSOTA1LTAwMTMg5rKW57iE55yM5ZCN6K235biC5Z-O!5e0!3m2!1sja!2sjp!4v1590109721205!5m2!1sja!2sjp"
+        width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+        tabindex="0"></iframe>
+    </div>
+  </aside>
+
+  <footer class="l-footer c-flex">
+    <small>COPYRIGHT &copy; YAMACAFE</small>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
